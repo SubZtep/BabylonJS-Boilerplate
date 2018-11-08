@@ -4,16 +4,16 @@
 
 ## Usage
 
-* `yarn` :small_orange_diamond: Install dependencies
-* `yarn dev` :small_orange_diamond: Compile development mode
-* `yarn watch` :small_orange_diamond: Watch development mode
+* `yarn` :heavy_minus_sign: Install dependencies
+* `yarn dev` :heavy_minus_sign: Compile development mode
+* `yarn watch` :heavy_minus_sign: Watch development mode
 
 ## Structure
 
-* `src/js/main.js` :small_orange_diamond: Entry point
-* `src/pug/index.pug` :small_orange_diamond: Html template
-* `src/scss/main.scss` :small_orange_diamond: Css
-* `dist/` :small_orange_diamond: Target folder
+* `src/js/main.js` :heavy_minus_sign: Entry point
+* `src/pug/index.pug` :heavy_minus_sign: Html template
+* `src/scss/main.scss` :heavy_minus_sign: Css
+* `dist/` :heavy_minus_sign: Target folder
 
 ## ...
 
