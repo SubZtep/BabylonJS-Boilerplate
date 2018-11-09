@@ -1,8 +1,23 @@
 import { engine, scene } from "Engine/engine"
-import "Scene/camera"
-import "Scene/light"
-import "Objects/sphere"
+import { createCamera } from "Scene/camera"
+import { createLight } from "Scene/light"
+import { createSphere } from "Objects/sphere"
 
-engine.runRenderLoop(() => {
-  scene.render()
-})
+function startGame () {
+  // Create basic objects
+  createCamera()
+  createLight()
+  createSphere()
+
+  // Game loop
+  engine.runRenderLoop(() => {
+    scene.render()
+
+    // Add some code here...
+  })
+}
+
+// Wait for the engine
+document
+  .querySelector("canvas")
+  .addEventListener("loaded", startGame, false)

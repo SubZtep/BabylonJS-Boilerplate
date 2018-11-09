@@ -5,9 +5,9 @@ const
 
 module.exports = {
   entry: [
-    './src/js/main.js',
-    './src/pug/index.pug',
-    './src/scss/main.scss'
+    path.resolve(__dirname, 'src/js/main.js'),
+    path.resolve(__dirname, 'src/pug/index.pug'),
+    path.resolve(__dirname, 'src/scss/main.scss')
   ],
   resolve: {
     enforceExtension: false,
@@ -50,7 +50,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/pug/index.pug'
+      template: path.resolve(__dirname, 'src/pug/index.pug')
     }),
     new MiniCssExtractPlugin(),
   ],

@@ -1,5 +1,10 @@
 import { scene } from "Engine/engine"
 
-let light = new BABYLON.PointLight("light", new BABYLON.Vector3(0, 5, -5), scene)
+export let light = null
 
-export default light
+export function createLight () {
+  light = new BABYLON.PointLight(
+    "light",
+    new BABYLON.Vector3(0, 5, -5),
+    scene)
+}

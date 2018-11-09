@@ -1,5 +1,10 @@
 import { scene } from "Engine/engine"
 
-let sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2}, scene)
+export let sphere = null
 
-export default sphere
+export function createSphere () {
+  sphere = BABYLON.MeshBuilder.CreateSphere(
+    "sphere",
+    { diameter: 2 },
+    scene)
+}
