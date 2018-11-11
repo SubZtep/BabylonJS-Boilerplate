@@ -1,3 +1,4 @@
+import "../scss/main.scss"
 import { engine, scene } from "Engine/engine"
 import { createCamera } from "Scene/camera"
 import { createLight } from "Scene/light"

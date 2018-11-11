@@ -1,14 +1,9 @@
 const
   path = require('path'),
-  HtmlWebpackPlugin = require('html-webpack-plugin'),
-  MiniCssExtractPlugin = require("mini-css-extract-plugin")
+  HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: [
-    path.resolve(__dirname, 'src/js/main.js'),
-    path.resolve(__dirname, 'src/pug/index.pug'),
-    path.resolve(__dirname, 'src/scss/main.scss')
-  ],
+  entry: path.resolve(__dirname, 'src/js/main.js'),
   resolve: {
     enforceExtension: false,
     alias: {
@@ -22,40 +17,21 @@ module.exports = {
     rules: [
       {
         test: /\.pug$/,
-        use: [
-          {
-            loader: "html-loader"
-          },
-          {
-            loader: "pug-html-loader",
-            options: {
-              pretty: true
-            }
-          }
-        ]
+        use: 'pug-loader'
       },
       {
         test: /\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader"
-          },
-          {
-            loader: "sass-loader"
-          }
-        ]
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/pug/index.pug')
-    }),
-    new MiniCssExtractPlugin(),
+    })
   ],
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'main.js'
   }
 }
